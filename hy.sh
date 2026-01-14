@@ -39,6 +39,7 @@ fi
 # Atualizar sistema
 print_message "Atualizando o sistema..."
 sudo pacman -Syu --noconfirm
+sudo pacman -S hyprland
 
 # Instalar Hyprland e componentes básicos
 print_message "Instalando Hyprland e componentes Wayland..."
@@ -151,18 +152,11 @@ general {
 decoration {
     # rounding = 10
     rounding = 2
-    blur = yes
-    blur_size = 3
-    blur_passes = 1
-    drop_shadow = yes
-    shadow_range = 4
-    shadow_render_power = 3
-    col.shadow = rgba(1a1a1aee)
 }
 
 # Animations
 animations {
-    enabled = yes
+    enabled = no
     bezier = myBezier, 0.05, 0.9, 0.1, 1.05
     animation = windows, 1, 7, myBezier
     animation = windowsOut, 1, 7, default, popin 80%
@@ -175,6 +169,7 @@ animations {
 dwindle {
     pseudotile = yes
     preserve_split = yes
+    force_split = 2
 }
 
 master {
@@ -183,21 +178,21 @@ master {
 
 # Gestures
 gestures {
-    workspace_swipe = on
+    #workspace_swipe = on
 }
 
 # Janelas
-windowrule = float,^(pavucontrol)$
-windowrule = float,^(blueman-manager)$
+#windowrule = float,^(pavucontrol)$
+#windowrule = float,^(blueman-manager)$
 
 # Atalhos
-bind = SUPER,Shift, Q, killactive,
-bind = SUPER, M, exit,
+bind = SUPER_Shift, Q, killactive,
+bind = SUPER, X, exit,
 bind = SUPER, V, togglefloating,
 bind = SUPER, Return, exec, kitty
 # bind = SUPER, C, exec, code
 bind = SUPER, B, exec, firefox
-bind = SUPER, D, exec, wofi --show drun
+bind = SUPER, D, exec, rofi --show drun
 bind = SUPER, P, exec, grim -g "$(slurp)" - | wl-copy
 
 # Workspaces
