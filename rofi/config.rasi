@@ -13,11 +13,10 @@ configuration {
 }
 
 * {
-    /* Colors - Nord */
-    darkbg: #4C5F4E; // Nord0
-    lightbg: #839985; // Nord2
-    tcolor: #d8deea; // Nord4
-
+    /* Colors - macOS style */
+    darkbg: #0f0f0f;   /* preto quase total */
+    lightbg: #1c1c1e;  /* cinza escuro estilo macOS */
+    tcolor: #f5f5f7;   /* branco suave para texto */
     /* Font */
     font: "Open-Sans Regular 10";
 }
